@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2011
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMClicker", "TMClicker\TMClicker.csproj", "{3F35DB51-FCB6-4A95-97B0-A5251994E695}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsManager", "WindowsManager\WindowsManager.csproj", "{AFD4109C-19F5-4115-9CCC-262503B6D141}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F35DB51-FCB6-4A95-97B0-A5251994E695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F35DB51-FCB6-4A95-97B0-A5251994E695}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F35DB51-FCB6-4A95-97B0-A5251994E695}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F35DB51-FCB6-4A95-97B0-A5251994E695}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFD4109C-19F5-4115-9CCC-262503B6D141}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFD4109C-19F5-4115-9CCC-262503B6D141}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFD4109C-19F5-4115-9CCC-262503B6D141}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFD4109C-19F5-4115-9CCC-262503B6D141}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B15F543-2AE3-4C27-90FD-263C726EA04A}
+	EndGlobalSection
+EndGlobal
