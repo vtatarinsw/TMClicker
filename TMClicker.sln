@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMClicker", "TMClicker\TMCl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsManager", "WindowsManager\WindowsManager.csproj", "{AFD4109C-19F5-4115-9CCC-262503B6D141}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Binaries", "Binaries", "{D5F28105-8716-43D0-98B0-39A01D1A256A}"
+	ProjectSection(SolutionItems) = preProject
+		Binaries\TMClicker - Binaries.zip = Binaries\TMClicker - Binaries.zip
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
