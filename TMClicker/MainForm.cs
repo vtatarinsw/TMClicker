@@ -57,7 +57,7 @@ namespace TMClicker
         {
             Bitmap bitmap = wm.GetScreenPart((int)nTop.Value, (int)nLeft.Value, (int)nWidth.Value, (int)nHeight.Value);
 
-            bitmap.Save(@"D:\Freelancer\Projects\MyProjects\TMClicker\" + tbFilename.Text, System.Drawing.Imaging.ImageFormat.Bmp);
+            bitmap.Save(@".\" + tbFilename.Text, System.Drawing.Imaging.ImageFormat.Bmp);
         }
 
         private void btnCompare_Click(object sender, EventArgs e)
