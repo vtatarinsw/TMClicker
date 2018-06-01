@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
@@ -74,12 +75,12 @@ namespace WindowManager
             { "RumbleGold", new TMPart() { PartName = "RumbleGold",
                                             Filename = "R06.bmp",
                                             Description = "Rumble After play Screen with gold prize claim",
-                                            Position = new Rectangle(1110, 570, PartWidth, PartHeight),
+                                            Position = new Rectangle(1110, 530, PartWidth, PartHeight),
                                             Bitmap = new Bitmap(ScreensPath + "R06.bmp")} },
 
             { "RumbleGoldClaim", new TMPart() { PartName = "RumbleGoldClaim",
                                             Filename = "R07.bmp",
-                                            Description = "Rumble After play Screen with gold prize xonfirm claim dialog",
+                                            Description = "Rumble After play Screen with gold prize confirm claim dialog",
                                             Position = new Rectangle(606, 550, PartWidth, PartHeight),
                                             Bitmap = new Bitmap(ScreensPath + "R07.bmp")} }
         };
@@ -96,22 +97,36 @@ namespace WindowManager
 
         public bool CompareImages(TMPart part, Bitmap image)
         {
+            int diff = 0;
+
             // Alternative code that is slower than memcmp
-            //for(int i = 0; i < image.Width; i++)
-            //    for(int k = 0; k < image.Height; k++)
-            //    {
-            //        Color c1 = image.GetPixel(i, k);
-            //        Color c2 = part.Bitmap.GetPixel(i, k);
+            for (int i = 0; i < image.Width; i++)
+                for (int k = 0; k < image.Height; k++)
+                {
+                    Color c1 = image.GetPixel(i, k);
+                    Color c2 = part.Bitmap.GetPixel(i, k);
 
-            //        if (c1 != c2)
-            //        {
-            //            return false;
-            //        }
-            //    }
+                    if (c1 != c2)
+                    {
+                        diff += (c1.R > c2.R ? c1.R - c2.R : c2.R - c1.R) +
+                            (c1.G > c2.G ? c1.G - c2.G : c2.G - c1.G) +
+                            (c1.B > c2.B ? c1.B - c2.B : c2.B - c1.B);
+                    }
+                }
 
-            //return true;
+            if (diff < 0 || diff > 1000)
+            {
+                return false;
+            }
 
-            return CompareMemCmp(part.Bitmap, image);
+            if (diff != 0)
+            {
+                Debug.WriteLine(string.Format("Checking {0}, Diff = {1}", part.PartName, diff));
+            }
+
+            return true;
+
+            //return CompareMemCmp(part.Bitmap, image);
         }
 
         [DllImport("msvcrt.dll", CallingConvention = CallingConvention.Cdecl)]
