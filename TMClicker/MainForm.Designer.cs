@@ -31,9 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabClicker = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.linkSteam = new System.Windows.Forms.LinkLabel();
+            this.linkOfficialWebsite = new System.Windows.Forms.LinkLabel();
+            this.label5 = new System.Windows.Forms.Label();
             this.cbUseGoldSteps = new System.Windows.Forms.CheckBox();
             this.btnRun = new System.Windows.Forms.Button();
             this.lbLog = new System.Windows.Forms.ListBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabDev = new System.Windows.Forms.TabPage();
             this.pBox2 = new System.Windows.Forms.PictureBox();
             this.btnCompare = new System.Windows.Forms.Button();
@@ -49,15 +56,10 @@
             this.nTop = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.linkOfficialWebsite = new System.Windows.Forms.LinkLabel();
-            this.linkSteam = new System.Windows.Forms.LinkLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.cb1280x720 = new System.Windows.Forms.CheckBox();
             this.tabControl.SuspendLayout();
             this.tabClicker.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabDev.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox)).BeginInit();
@@ -65,7 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nTop)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -81,6 +82,7 @@
             // 
             // tabClicker
             // 
+            this.tabClicker.Controls.Add(this.cb1280x720);
             this.tabClicker.Controls.Add(this.label8);
             this.tabClicker.Controls.Add(this.label7);
             this.tabClicker.Controls.Add(this.label6);
@@ -98,6 +100,64 @@
             this.tabClicker.TabIndex = 0;
             this.tabClicker.Text = "Clicker";
             this.tabClicker.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(15, 177);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(357, 13);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "In case of any copyright issues, please contact the author to resolve them.";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(15, 152);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(347, 13);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "The app does not violate any laws or copyrights. It\'s just game\'s fan tool.";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(15, 129);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(378, 13);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "The Clicker was developed to help getting more points in clan chest challenge.";
+            // 
+            // linkSteam
+            // 
+            this.linkSteam.AutoSize = true;
+            this.linkSteam.Location = new System.Drawing.Point(317, 109);
+            this.linkSteam.Name = "linkSteam";
+            this.linkSteam.Size = new System.Drawing.Size(65, 13);
+            this.linkSteam.TabIndex = 22;
+            this.linkSteam.TabStop = true;
+            this.linkSteam.Text = "Steam Page";
+            this.linkSteam.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSteam_LinkClicked);
+            // 
+            // linkOfficialWebsite
+            // 
+            this.linkOfficialWebsite.AutoSize = true;
+            this.linkOfficialWebsite.Location = new System.Drawing.Point(230, 109);
+            this.linkOfficialWebsite.Name = "linkOfficialWebsite";
+            this.linkOfficialWebsite.Size = new System.Drawing.Size(81, 13);
+            this.linkOfficialWebsite.TabIndex = 21;
+            this.linkOfficialWebsite.TabStop = true;
+            this.linkOfficialWebsite.Text = "Official Website";
+            this.linkOfficialWebsite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkOfficialWebsite_LinkClicked);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(136, 195);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(246, 13);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Tactical Monsters is Copyright Camex Games 2017";
             // 
             // cbUseGoldSteps
             // 
@@ -127,6 +187,14 @@
             this.lbLog.Name = "lbLog";
             this.lbLog.Size = new System.Drawing.Size(358, 199);
             this.lbLog.TabIndex = 17;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(8, 101);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(391, 107);
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
             // 
             // tabDev
             // 
@@ -299,71 +367,17 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Top";
             // 
-            // label5
+            // cb1280x720
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(136, 195);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(246, 13);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Tactical Monsters is Copyright Camex Games 2017";
-            // 
-            // linkOfficialWebsite
-            // 
-            this.linkOfficialWebsite.AutoSize = true;
-            this.linkOfficialWebsite.Location = new System.Drawing.Point(230, 109);
-            this.linkOfficialWebsite.Name = "linkOfficialWebsite";
-            this.linkOfficialWebsite.Size = new System.Drawing.Size(81, 13);
-            this.linkOfficialWebsite.TabIndex = 21;
-            this.linkOfficialWebsite.TabStop = true;
-            this.linkOfficialWebsite.Text = "Official Website";
-            this.linkOfficialWebsite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkOfficialWebsite_LinkClicked);
-            // 
-            // linkSteam
-            // 
-            this.linkSteam.AutoSize = true;
-            this.linkSteam.Location = new System.Drawing.Point(317, 109);
-            this.linkSteam.Name = "linkSteam";
-            this.linkSteam.Size = new System.Drawing.Size(65, 13);
-            this.linkSteam.TabIndex = 22;
-            this.linkSteam.TabStop = true;
-            this.linkSteam.Text = "Steam Page";
-            this.linkSteam.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSteam_LinkClicked);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(8, 101);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(391, 107);
-            this.pictureBox1.TabIndex = 23;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 129);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(378, 13);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "The Clicker was developed to help getting more points in clan chest challenge.";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 152);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(347, 13);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "The app does not violate any laws or copyrights. It\'s just game\'s fan tool.";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(15, 177);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(357, 13);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "In case of any copyright issues, please contact the author to resolve them.";
+            this.cb1280x720.AutoSize = true;
+            this.cb1280x720.Checked = true;
+            this.cb1280x720.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb1280x720.Location = new System.Drawing.Point(8, 40);
+            this.cb1280x720.Name = "cb1280x720";
+            this.cb1280x720.Size = new System.Drawing.Size(244, 17);
+            this.cb1280x720.TabIndex = 27;
+            this.cb1280x720.Text = "Use 1280x720 resolution (default is 1280x800)";
+            this.cb1280x720.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -380,6 +394,7 @@
             this.tabControl.ResumeLayout(false);
             this.tabClicker.ResumeLayout(false);
             this.tabClicker.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabDev.ResumeLayout(false);
             this.tabDev.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBox2)).EndInit();
@@ -388,7 +403,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nTop)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -422,6 +436,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox cb1280x720;
     }
 }
 

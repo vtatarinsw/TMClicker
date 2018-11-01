@@ -7,24 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMClicker", "TMClicker\TMCl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsManager", "WindowsManager\WindowsManager.csproj", "{AFD4109C-19F5-4115-9CCC-262503B6D141}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Binaries", "Binaries", "{D5F28105-8716-43D0-98B0-39A01D1A256A}"
-	ProjectSection(SolutionItems) = preProject
-		Binaries\TMClicker - Binaries.zip = Binaries\TMClicker - Binaries.zip
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{A8E7E4C9-961A-4E69-972F-49E49697A84D}"
-	ProjectSection(SolutionItems) = preProject
-		Docs\Tactical Monsters Clicker.docx = Docs\Tactical Monsters Clicker.docx
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{812B72E4-2528-4D1C-B643-F7674BD60DDF}"
-	ProjectSection(SolutionItems) = preProject
-		Docs\Images\01 - Configuration.png = Docs\Images\01 - Configuration.png
-		Docs\Images\02 - Play Main Screen.png = Docs\Images\02 - Play Main Screen.png
-		Docs\Images\03 - Play Rumble Screen.png = Docs\Images\03 - Play Rumble Screen.png
-		Docs\Images\04 - Play Clicker View.png = Docs\Images\04 - Play Clicker View.png
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,9 +24,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{812B72E4-2528-4D1C-B643-F7674BD60DDF} = {A8E7E4C9-961A-4E69-972F-49E49697A84D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7B15F543-2AE3-4C27-90FD-263C726EA04A}

@@ -86,6 +86,30 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppIcon\AppIcon.ico" />
+    <Content Include="Screens\1280_720\R01.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Screens\1280_720\R02.0.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Screens\1280_720\R02.1.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Screens\1280_720\R03.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Screens\1280_720\R04.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Screens\1280_720\R05.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Screens\1280_720\R06.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Screens\1280_720\R07.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Screens\R01.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

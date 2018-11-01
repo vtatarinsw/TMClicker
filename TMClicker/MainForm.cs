@@ -116,7 +116,14 @@ namespace TMClicker
 
             Thread.Sleep(CommonDelay);
 
-            TMScreens tmScreens = new TMScreens();
+            enumResolution resolution = enumResolution.Default_1280x800;
+
+            if (cb1280x720.Checked)
+            {
+                resolution = enumResolution.Res_1280x720;
+            }
+
+            TMScreens tmScreens = new TMScreens(resolution);
             TMPart part = null;
 
             int rumbles = 0;
@@ -164,6 +171,8 @@ namespace TMClicker
 
                             wm.LeftMouseClick(part.Position.Left, part.Position.Top);
                             stage = Stages.CheckAuto;
+
+                            claimWait = 0;
                         }
                         break;
 
@@ -171,11 +180,16 @@ namespace TMClicker
                         // Confirm we started Auto battle
                         part = tmScreens.GetPart("RumbleAutoOn");
 
-                        if (wm.VerifyPart(tmScreens, part))
+                        if (wm.VerifyPart(tmScreens, part) || claimWait > 5)
                         {
                             AddLog("RumbleAuto - Auto is ON confirmed!");
 
                             stage = Stages.CheckWinLose;
+
+                            claimWait = 0;
+                        } else
+                        {
+                            claimWait++;
                         }
                         break;
 

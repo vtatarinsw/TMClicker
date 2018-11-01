@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -19,71 +20,94 @@ namespace WindowManager
         public Bitmap Bitmap;
     }
 
+    public enum enumResolution { Default_1280x800 = 0, Res_1280x720 = 1 };
+
     public class TMScreens
     {
-        public TMScreens()
+        private enumResolution Resolution = enumResolution.Default_1280x800;
+
+        public TMScreens(enumResolution resolution = enumResolution.Default_1280x800)
         {
+            Resolution = resolution;
 
-
+            InitFields();
         }
 
         private const int PartWidth = 25;
         private const int PartHeight = 25;
 
-        private const string ScreensPath = @".\Screens\";
+        private Dictionary<string, TMPart> Parts = null;
 
+        private static string ScreensPath = string.Empty;
 
-
-        private Dictionary<string, TMPart> Parts = new Dictionary<string, TMPart>()
+        private void InitFields()
         {
-            { "RumbleStart", new TMPart() { PartName = "RumbleStart",
-                                            Filename = "R01.bmp",
-                                            Description = "Main Rumble Screen with RUMBLE button on center bottom part",
-                                            Position = new Rectangle(550, 607, PartWidth, PartHeight),
-                                            Bitmap = new Bitmap(ScreensPath + "R01.bmp")} },
+            string subFolder = string.Empty;
 
-            { "RumbleAuto", new TMPart() {  PartName = "RumbleAuto",
-                                            Filename = "R02.0.bmp",
-                                            Description = "Rumble Play Screen with AUTO button that is NOT activated",
-                                            Position = new Rectangle(1192, 774, PartWidth, PartHeight),
-                                            Bitmap = new Bitmap(ScreensPath + "R02.0.bmp")} },
+            switch (Resolution)
+            {
+                case enumResolution.Res_1280x720:
+                    subFolder = @"1280_720\";
+                    break;
 
-            { "RumbleAutoOn", new TMPart() { PartName = "RumbleAutoOn",
-                                            Filename = "R02.1.bmp",
-                                            Description = "Rumble Play Screen with AUTO button that is Activated",
-                                            Position = new Rectangle(1192, 774, PartWidth, PartHeight),
-                                            Bitmap = new Bitmap(ScreensPath + "R02.1.bmp")} },
+                default:
+                    subFolder = string.Empty;
+                    break;
+            }
 
-            { "RumbleWon", new TMPart() {   PartName = "RumbleWon",
-                                            Filename = "R03.bmp",
-                                            Description = "Rumble After play Screen with Won or Defeat title and OK button",
-                                            Position = new Rectangle(716, 706, PartWidth, PartHeight),
-                                            Bitmap = new Bitmap(ScreensPath + "R03.bmp")} },
+            ScreensPath = @".\Screens\" + subFolder;
 
-            { "RumbleClaim", new TMPart() { PartName = "RumbleClaim",
-                                            Filename = "R04.bmp",
-                                            Description = "Rumble After play Screen with Won or Defeat title and OK button",
-                                            Position = new Rectangle(606, 550, PartWidth, PartHeight),
-                                            Bitmap = new Bitmap(ScreensPath + "R04.bmp")} },
+            Parts = new Dictionary<string, TMPart>()
+            {
+                { "RumbleStart", new TMPart() { PartName = "RumbleStart",
+                                                Filename = "R01.bmp",
+                                                Description = "Main Rumble Screen with RUMBLE button on center bottom part",
+                                                Position = new Rectangle(560, 560, PartWidth, PartHeight),
+                                                Bitmap = new Bitmap(ScreensPath + "R01.bmp")} },
 
-            { "RumbleArena", new TMPart() { PartName = "RumbleArena",
-                                            Filename = "R05.bmp",
-                                            Description = "Rumble After play Screen with change Arena",
-                                            Position = new Rectangle(610, 760, PartWidth, PartHeight),
-                                            Bitmap = new Bitmap(ScreensPath + "R05.bmp")} },
+                { "RumbleAuto", new TMPart() {  PartName = "RumbleAuto",
+                                                Filename = "R02.0.bmp",
+                                                Description = "Rumble Play Screen with AUTO button that is NOT activated",
+                                                Position = new Rectangle(1192, 695, PartWidth, PartHeight),
+                                                Bitmap = new Bitmap(ScreensPath + "R02.0.bmp")} },
 
-            { "RumbleGold", new TMPart() { PartName = "RumbleGold",
-                                            Filename = "R06.bmp",
-                                            Description = "Rumble After play Screen with gold prize claim",
-                                            Position = new Rectangle(1110, 530, PartWidth, PartHeight),
-                                            Bitmap = new Bitmap(ScreensPath + "R06.bmp")} },
+                { "RumbleAutoOn", new TMPart() { PartName = "RumbleAutoOn",
+                                                Filename = "R02.1.bmp",
+                                                Description = "Rumble Play Screen with AUTO button that is Activated",
+                                                Position = new Rectangle(1192, 695, PartWidth, PartHeight),
+                                                Bitmap = new Bitmap(ScreensPath + "R02.1.bmp")} },
 
-            { "RumbleGoldClaim", new TMPart() { PartName = "RumbleGoldClaim",
-                                            Filename = "R07.bmp",
-                                            Description = "Rumble After play Screen with gold prize confirm claim dialog",
-                                            Position = new Rectangle(606, 550, PartWidth, PartHeight),
-                                            Bitmap = new Bitmap(ScreensPath + "R07.bmp")} }
-        };
+                { "RumbleWon", new TMPart() {   PartName = "RumbleWon",
+                                                Filename = "R03.bmp",
+                                                Description = "Rumble After play Screen with Won or Defeat title and OK button",
+                                                Position = new Rectangle(1025, 635, PartWidth, PartHeight),
+                                                Bitmap = new Bitmap(ScreensPath + "R03.bmp")} },
+
+                { "RumbleClaim", new TMPart() { PartName = "RumbleClaim",
+                                                Filename = "R04.bmp",
+                                                Description = "Rumble After play Screen with Won or Defeat title and OK button",
+                                                Position = new Rectangle(606, 500, PartWidth, PartHeight),
+                                                Bitmap = new Bitmap(ScreensPath + "R04.bmp")} },
+
+                { "RumbleArena", new TMPart() { PartName = "RumbleArena",
+                                                Filename = "R05.bmp",
+                                                Description = "Rumble After play Screen with change Arena",
+                                                Position = new Rectangle(615, 685, PartWidth, PartHeight),
+                                                Bitmap = new Bitmap(ScreensPath + "R05.bmp")} },
+
+                { "RumbleGold", new TMPart() { PartName = "RumbleGold",
+                                                Filename = "R06.bmp",
+                                                Description = "Rumble After play Screen with gold prize claim",
+                                                Position = new Rectangle(1110, 480, PartWidth, PartHeight),
+                                                Bitmap = new Bitmap(ScreensPath + "R06.bmp")} },
+
+                { "RumbleGoldClaim", new TMPart() { PartName = "RumbleGoldClaim",
+                                                Filename = "R07.bmp",
+                                                Description = "Rumble After play Screen with gold prize confirm claim dialog",
+                                                Position = new Rectangle(606, 490, PartWidth, PartHeight),
+                                                Bitmap = new Bitmap(ScreensPath + "R07.bmp")} }
+            };
+        }
 
         public TMPart GetPart(string partName)
         {
